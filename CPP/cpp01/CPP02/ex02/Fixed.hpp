@@ -16,9 +16,25 @@ public:
 	Fixed(const int n);
 	Fixed(const float f);
 	Fixed(const Fixed &other);
+	Fixed& operator=(const Fixed &other);
 	~Fixed();
 
-	Fixed& operator=(const Fixed &other);
+	bool	operator>(const Fixed& other) const;
+	bool	operator<(const Fixed& other) const;
+	bool	operator>=(const Fixed& other) const;
+	bool	operator<=(const Fixed& other) const;
+	bool	operator==(const Fixed& other) const;
+	bool	operator!=(const Fixed& other) const;
+
+	Fixed	operator+(const Fixed& other) const;
+	Fixed	operator-(const Fixed& other) const;
+	Fixed	operator*(const Fixed& other) const;
+	Fixed	operator/(const Fixed& other) const;
+
+	Fixed&  operator--();
+	Fixed  operator--(int);
+	Fixed&  operator++();
+	Fixed	operator++(int);
 
 	float	toFloat( void ) const;
 	int		toInt( void ) const;
