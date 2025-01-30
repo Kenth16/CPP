@@ -12,34 +12,49 @@ private:
 	static const int	_fracBits;
 
 public:
+// Constructors.
 	Fixed();
 	Fixed(const int n);
 	Fixed(const float f);
+
+// Copy constructors.
 	Fixed(const Fixed &other);
-	Fixed& operator=(const Fixed &other);
+
+// Deconstructors.
 	~Fixed();
 
-	bool	operator>(const Fixed& other) const;
-	bool	operator<(const Fixed& other) const;
-	bool	operator>=(const Fixed& other) const;
-	bool	operator<=(const Fixed& other) const;
-	bool	operator==(const Fixed& other) const;
-	bool	operator!=(const Fixed& other) const;
+// Overloaded operators.
+	Fixed& 			operator=(const Fixed &other);
 
-	Fixed	operator+(const Fixed& other) const;
-	Fixed	operator-(const Fixed& other) const;
-	Fixed	operator*(const Fixed& other) const;
-	Fixed	operator/(const Fixed& other) const;
+	bool			operator>(const Fixed& other) const;
+	bool			operator<(const Fixed& other) const;
+	bool			operator>=(const Fixed& other) const;
+	bool			operator<=(const Fixed& other) const;
+	bool			operator==(const Fixed& other) const;
+	bool			operator!=(const Fixed& other) const;
 
-	Fixed&  operator--();
-	Fixed  operator--(int);
-	Fixed&  operator++();
-	Fixed	operator++(int);
+	Fixed			operator+(const Fixed& other) const;
+	Fixed			operator-(const Fixed& other) const;
+	Fixed			operator*(const Fixed& other) const;
+	Fixed			operator/(const Fixed& other) const;
 
-	float	toFloat( void ) const;
-	int		toInt( void ) const;
-	int		getRawBits( void ) const;
-	void	setRawBits ( int const raw );
+	Fixed& 			operator--();
+	Fixed  			operator--(int);
+	Fixed& 			operator++();
+	Fixed			operator++(int);
+
+	static Fixed&			max(Fixed& a, Fixed& b);
+	static Fixed&			min(Fixed& a, Fixed& b);
+	static const Fixed&	max(const Fixed& a, const Fixed& b);
+	static const Fixed&	min(const Fixed& a, const Fixed& b);
+
+
+
+	float			toFloat( void ) const;
+	int				toInt( void ) const;
+
+	int				getRawBits( void ) const;
+	void			setRawBits ( int const raw );
 	
 };
 
