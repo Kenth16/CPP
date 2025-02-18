@@ -14,15 +14,13 @@ char    *megaphone(char *str)
 
 int main(int ac, char **av)
 {
-    int i = 1;
+    int     i = 1;
     char    *str_uppercase;
 
     if (ac > 1)
     {
         while (i < ac)
         {
-            if (i > 1)
-                std::cout << " ";
             str_uppercase = megaphone(av[i]);
             std::cout << str_uppercase;
             i++;
@@ -31,4 +29,5 @@ int main(int ac, char **av)
     }
     else
         std::cout << "* LOUD AND UNBEARABLE FEEDNACK NOISER *" << std::endl;
+    return 0;
 }
